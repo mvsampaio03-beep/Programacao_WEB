@@ -17,7 +17,7 @@ Programacao_WEB/
 │   └── index.html
 │
 ├── atividade_2/
-│   └── produto.html
+│   └── index.html
 │
 ├── index.html
 │
@@ -50,7 +50,7 @@ Desenvolvimento de uma página de produto utilizando diferentes elementos do HTM
 ## 💻 Tecnologias utilizadas
 
 * HTML5
-* Git
+* Git 
 * GitHub
 * Visual Studio Code
 
