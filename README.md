@@ -13,10 +13,10 @@ O objetivo é organizar e acompanhar a evolução dos projetos realizados ao lon
 ```text
 Programacao_WEB/
 │
-├── atividadeA/
+├── atividade_1/
 │   └── index.html
 │
-├── atividadeB/
+├── atividade_2/
 │   └── produto.html
 │
 ├── index.html
@@ -26,7 +26,7 @@ Programacao_WEB/
 
 ## 📝 Atividades
 
-### Atividade A
+### Atividade 1
 
 Desenvolvimento de uma página utilizando a estrutura básica do **HTML5**, incluindo:
 
@@ -37,7 +37,7 @@ Desenvolvimento de uma página utilizando a estrutura básica do **HTML5**, incl
 * Parágrafos;
 * Uso das tags `strong` e `em`.
 
-### Atividade B
+### Atividade 2
 
 Desenvolvimento de uma página de produto utilizando diferentes elementos do HTML5:
 
