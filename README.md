@@ -49,8 +49,7 @@ Desenvolvimento de uma página de produto utilizando diferentes elementos do HTM
 
 ## 💻 Tecnologias utilizadas
 
-* HTML5
-* Git 
+* HTML5 
 * GitHub
 * Visual Studio Code
 
