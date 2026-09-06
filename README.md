@@ -1,7 +1,3 @@
-Seu README está bem organizado. Como você está adicionando uma nova atividade de **HTML e CSS sobre “Meu Perfil”**, vale atualizar a estrutura e a lista de atividades.
-
-Aqui está uma versão atualizada e pronta para colocar no `README.md`:
-
 # 💻 Programação Web
 
 Repositório destinado às atividades e projetos desenvolvidos na disciplina de **Programação Web**.
