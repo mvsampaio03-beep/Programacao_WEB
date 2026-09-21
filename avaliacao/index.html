@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Define a codificação de caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Deixa a página responsiva -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
+    <title>Ayrton Senna | Sempre Vivo</title>
+
+    <!-- Liga o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== CABEÇALHO ==================== -->
+    <header class="cabecalho">
+
+        <!-- Logo -->
+        <a class="marca" href="#inicio">
+
+            <span class="simbolo">S</span>
+
+            <span class="marca-texto">
+                <strong>AYRTON SENNA</strong>
+                <small>SEMPRE VIVO</small>
+            </span>
+
+        </a>
+
+        <!-- Menu -->
+        <nav class="menu">
+
+            <a class="ativo" href="#inicio">
+                INÍCIO
+            </a>
+
+            <a href="#historia">
+                HISTÓRIA
+            </a>
+
+            <a href="#conquistas">
+                CONQUISTAS
+            </a>
+
+        </nav>
+
+        <!-- Botão de troca de tema -->
+        <button
+            id="btnTema"
+            class="btn-tema"
+            type="button"
+        >
+            
+            <span>Modo escuro</span>
+        </button>
+
+    </header>
+
+
+    <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+    <main id="inicio">
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" id="hero">
+
+            <!-- Texto principal -->
+            <div class="hero-conteudo">
+
+                <p class="chamada">
+                    FÓRMULA 1 • BRASIL • LENDA
+                </p>
+
+                <h1>
+                    AYRTON SENNA:
+                    <br>
+                    <span>UM ÍDOLO PARA SEMPRE.</span>
+                </h1>
+
+                <p class="hero-descricao">
+                    Velocidade, coragem e paixão. Ayrton Senna é
+                    apresentado nesta página como um símbolo de
+                    dedicação ao automobilismo e de inspiração
+                    para diferentes gerações.
+                </p>
+
+                <!-- Botão para a trajetória -->
+                <a
+                    class="btn-amarelo"
+                    href="#historia"
+                >
+                    CONHEÇA SUA TRAJETÓRIA
+                    <span>→</span>
+                </a>
+
+            </div>
+
+
+            <!-- Imagem principal -->
+            <div class="hero-foto">
+
+                <img
+                    src="img/ayrton-senna.jpg"
+                    alt="Ayrton Senna em um carro de Fórmula 1"
+                >
+
+                <div class="assinatura">
+                    Ayrton Senna
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== INTERAÇÕES ==================== -->
+        <section
+            class="interacoes"
+            id="interacao"
+        >
+
+            <!-- CARD DO NOME -->
+            <article class="interacao-card">
+
+                <div class="icone-circulo">
+                    ♙
+                </div>
+
+                <div class="interacao-conteudo">
+
+                    <h2>
+                        Entre na pista
+                    </h2>
+
+                    <p>
+                        Digite seu nome para receber
+                        uma mensagem personalizada.
+                    </p>
+
+                    <label for="nome">
+                        Seu nome:
+                    </label>
+
+                    <!-- Campo obrigatório -->
+                    <input
+                        id="nome"
+                        type="text"
+                        placeholder="Digite seu nome"
+                        maxlength="40"
+                        autocomplete="off"
+                    >
+
+                    <!-- Mensagem alterada pelo JavaScript -->
+                    <p
+                        id="mensagemNome"
+                        class="mensagem-nome"
+                    >
+                        🏁 Bem-vindo à página de Ayrton Senna!
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARD DE HOMENAGEM -->
+            <article class="interacao-card homenagem">
+
+                <div class="icone-circulo">
+                    ♡
+                </div>
+
+                <div class="interacao-conteudo">
+
+                    <h2>
+                        Homenagem
+                    </h2>
+
+                    <p>
+                        Clique no botão para deixar
+                        sua curtida em homenagem ao piloto.
+                    </p>
+
+                    <!-- Botão de curtida -->
+                    <button
+                        id="btnCurtir"
+                        class="btn-curtir"
+                        type="button"
+                    >
+                        ♥ &nbsp; Curtir
+                    </button>
+
+                    <!-- Contador -->
+                    <div class="contador">
+
+                        <strong id="curtidas">
+                            0
+                        </strong>
+
+                        <span>
+                            curtidas
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="carro-decorativo">
+                    F1
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ==================== HISTÓRIA ==================== -->
+        <section
+            class="historia"
+            id="historia"
+        >
+
+            <!-- Texto -->
+            <div class="historia-texto">
+
+                <p class="chamada">
+                    TRAJETÓRIA
+                </p>
+
+                <h2>
+                    Uma história marcada pela velocidade
+                </h2>
+
+                <p>
+                    Ayrton Senna da Silva nasceu em 21 de março de 1960,
+                    em uma família brasileira abastada onde, junto com seu
+                    irmão e irmã, teve uma criação privilegiada.
+
+                    Ele nunca precisou correr por dinheiro, mas sua profunda
+                    necessidade de competir começou com uma paixão por um
+                    mini kart que seu pai lhe deu quando ele tinha quatro anos.
+
+                    Quando menino, os destaques da vida de Ayrton eram as
+                    manhãs de Grand Prix, quando ele acordava tremendo de
+                    expectativa diante da perspectiva de ver seus heróis da
+                    Fórmula 1 em ação na televisão.
+
+                    Aos 13 anos, ele correu de kart pela primeira vez e venceu
+                    imediatamente. Oito anos depois, ele foi para as corridas
+                    de monopostos na Grã-Bretanha, onde, em três anos,
+                    conquistou cinco campeonatos.
+
+                    Em 1984, estreou na Fórmula 1 com a Toleman. Em Mônaco,
+                    seu sensacional segundo lugar atrás do McLaren de Alain Prost,
+                    sob chuva torrencial, foi a confirmação do talento fenomenal
+                    que conquistaria o esporte.
+                </p>
+
+                <!-- Botão DOM -->
+                <button
+                    id="btnMais"
+                    class="btn-outline"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="maisInformacoes"
+                >
+                    <span id="textoMais">
+                        Mostrar mais informações
+                    </span>
+
+                    <span id="setaMais">
+                        ⌄
+                    </span>
+                </button>
+
+
+                <!-- Informação escondida -->
+                <div
+                    id="maisInformacoes"
+                    class="mais-informacoes"
+                >
+
+                    <p>
+                        Decidindo que os recursos limitados de Toleman eram
+                        insuficientes para sua ambição imponente, Senna rescindiu
+                        seu contrato e, em 1985, mudou-se para a Lotus, onde,
+                        em três temporadas, largou da pole 16 vezes e venceu
+                        seis corridas.
+
+                        Tendo alcançado os limites da Lotus, decidiu que o
+                        caminho mais rápido seria com a McLaren, onde foi em
+                        1988 e permaneceu por seis temporadas, vencendo
+                        35 corridas e três campeonatos mundiais.
+
+                        Em 1988, quando a McLaren-Honda venceu 15 das 16
+                        corridas, Senna venceu seu companheiro de equipe
+                        Alain Prost por oito vitórias a sete, conquistando
+                        seu primeiro título de piloto.
+
+                        A partir daí, os dois grandes pilotos se tornaram
+                        protagonistas de uma das disputas mais marcantes
+                        da Fórmula 1.
+
+                        Em 1989, Prost conquistou o título após um incidente
+                        com Senna em Suzuka.
+
+                        Em 1990, Senna conquistou seu segundo campeonato
+                        após um novo confronto com Prost na primeira curva
+                        de Suzuka.
+
+                        O terceiro título de Senna, em 1991, confirmou ainda
+                        mais seu domínio como piloto.
+
+                        Algumas de suas melhores atuações vieram em seu
+                        último ano com a McLaren, após o qual ele se transferiu
+                        para a Williams para a temporada de 1994.
+
+                        No dia 1º de maio de 1994, o brasileiro se chocou
+                        contra o muro na curva Tamburello do GP de Ímola,
+                        na Itália, e acabou falecendo.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Imagem -->
+            <div class="historia-imagem">
+
+                <img
+                    src="img/senna.jpg"
+                    alt="Imagem de Ayrton Senna"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== CONQUISTAS ==================== -->
+        <section
+            class="conquistas"
+            id="conquistas"
+        >
+
+            <!-- Título e informações -->
+            <div class="conquistas-titulo">
+
+                <p class="chamada">
+                    FÓRMULA 1
+                </p>
+
+                <h2>
+                    Grandes conquistas
+                </h2>
+
+                <div class="linha-amarela"></div>
+
+                <p class="conquistas-intro">
+                    Ayrton Senna construiu uma das trajetórias mais marcantes da história
+                    do automobilismo. Ao longo de sua carreira na Fórmula 1, conquistou
+                    três campeonatos mundiais, venceu 41 Grandes Prêmios e alcançou
+                    65 pole positions, números que demonstram seu talento, sua velocidade
+                    e sua competitividade nas pistas.
+
+                    <br><br>
+
+                    Desde os primeiros anos de sua carreira, Senna chamou a atenção por
+                    sua habilidade ao volante, sua dedicação e sua determinação em buscar
+                    sempre o melhor resultado. Sua capacidade de conduzir em condições
+                    difíceis, especialmente em pistas molhadas, tornou-se uma de suas
+                    características mais reconhecidas. Em cada corrida, demonstrava uma
+                    combinação de técnica, concentração e coragem que marcou sua passagem
+                    pela Fórmula 1.
+
+                    <br><br>
+
+                    Os três campeonatos mundiais conquistados em 1988, 1990 e 1991
+                    representam alguns dos momentos mais importantes de sua carreira.
+                    Além dos títulos, suas vitórias e disputas nas pistas proporcionaram
+                    momentos que ficaram registrados na memória dos fãs do automobilismo.
+                    As 65 pole positions conquistadas ao longo de sua carreira também
+                    demonstram sua capacidade de alcançar um desempenho excepcional nas
+                    classificações.
+
+                    <br><br>
+
+                    Senna também protagonizou grandes rivalidades e disputas que marcaram
+                    uma geração da Fórmula 1. Suas batalhas nas pistas despertaram a
+                    atenção de fãs em diferentes partes do mundo e contribuíram para
+                    transformar suas corridas em acontecimentos acompanhados por milhões
+                    de pessoas.
+
+                    <br><br>
+
+                    Mais do que seus números e troféus, Ayrton Senna deixou um legado
+                    baseado na dedicação, na busca pela excelência e na paixão pelo
+                    automobilismo. Sua trajetória ultrapassou os limites das pistas e
+                    fez com que seu nome se tornasse conhecido mundialmente. Sua história
+                    continua sendo lembrada por diferentes gerações, mantendo viva a
+                    importância de suas conquistas para o esporte.
+
+                    <br><br>
+
+                    Mesmo décadas após sua última corrida, seus feitos continuam presentes
+                    na história da Fórmula 1. As vitórias, os títulos, as pole positions
+                    e os momentos inesquecíveis construíram uma trajetória que permanece
+                    como parte importante da história do automobilismo brasileiro e
+                    mundial. Ayrton Senna não deixou apenas estatísticas: deixou uma
+                    história marcada por talento, dedicação, determinação e paixão pelas
+                    corridas.
+                </p>
+                </p>
+                <button
+                    id="btnConquistas"
+                    class="btn-outline btn-conquistas"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="textoConquistas"
+                >
+                    <span id="textoBtnConquistas">
+                        Ver mais sobre as conquistas
+                    </span>
+
+                    <span id="setaConquistas">
+                        ⌄
+                    </span>
+                </button>
+
+
+                <!-- Informações das conquistas -->
+                <div
+                    id="textoConquistas"
+                    class="texto-conquistas"
+                >
+
+                    <!-- 1988 -->
+                    <article class="conquista-item">
+
+                        <h3>
+                            1988
+                        </h3>
+
+                        <p>
+                            O primeiro título de Ayrton Senna na Fórmula 1
+                            foi justamente em sua temporada de estreia com
+                            a McLaren. A vitória no GP do Japão, em Suzuka,
+                            marcou a consagração do piloto em uma temporada
+                            decidida no detalhe contra o francês Alain Prost,
+                            seu companheiro de equipe e que se tornaria seu
+                            grande rival no automobilismo.
+
+                            No treino classificatório, Senna garantiu a pole.
+                            Contudo, no dia da prova, seu carro não saiu do lugar
+                            no momento da largada e ele perdeu 16 posições.
+
+                            Com 15 ultrapassagens, o brasileiro concluiu uma
+                            vitória marcante para celebrar sua primeira
+                            conquista mundial.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 1990 -->
+                    <article class="conquista-item">
+
+                        <h3>
+                            1990
+                        </h3>
+
+                        <p>
+                            Depois de ver Prost conquistar o campeonato em
+                            1989, Senna voltou com força para recuperar o
+                            título em 1990.
+
+                            Com o francês na Ferrari, ambos brigaram pelo
+                            Mundial até o fim da temporada.
+
+                            No GP do Japão, o brasileiro chegou com vantagem
+                            na classificação e largou na pole position, mas
+                            viu Prost sair na frente na hora da largada.
+
+                            Senna reagiu e, logo na primeira curva, os dois
+                            bateram. O abandono dos dois da corrida deu a
+                            Senna o bicampeonato.
+
+                            No ano anterior, Prost havia conquistado o título
+                            após uma colisão com Senna no mesmo GP do Japão.
+                        </p>
+
+                    </article>
+
+
+                    <!-- 1991 -->
+                    <article class="conquista-item">
+
+                        <h3>
+                            1991
+                        </h3>
+
+                        <p>
+                            Em 1991, seu grande competidor não foi Prost,
+                            mas sim Nigel Mansell.
+
+                            Aquela temporada marcou a primeira vez em que
+                            Ayrton Senna subiu no lugar mais alto do pódio
+                            no GP de Interlagos, no Brasil.
+
+                            Mais uma vez, a conquista foi decidida no
+                            GP do Japão. Senna largou em segundo, mas viu
+                            Mansell abandonar a prova na décima volta.
+
+                            Com o título garantido, ele abriu passagem,
+                            já na última volta, para que seu colega
+                            Gerhard Berger, da McLaren, pudesse conquistar
+                            seu primeiro triunfo na escuderia.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- Números -->
+            <div class="numeros">
+
+                <!-- Campeonatos -->
+                <article class="numero-card">
+
+                    <span class="numero-icone">
+                        ♜
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            03
+                        </strong>
+
+                        <p>
+                            Campeonatos Mundiais
+                        </p>
+
+                        <small>
+                            1988, 1990 e 1991.
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Vitórias -->
+                <article class="numero-card">
+
+                    <span class="numero-icone">
+                        ⚑
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            41
+                        </strong>
+
+                        <p>
+                            Vitórias
+                        </p>
+
+                        <small>
+                            Durante sua carreira na Fórmula 1.
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Pole positions -->
+                <article class="numero-card">
+
+                    <span class="numero-icone">
+                        ◎
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            65
+                        </strong>
+
+                        <p>
+                            Pole Positions
+                        </p>
+
+                        <small>
+                            Conquistadas na Fórmula 1.
+                        </small>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="rodape">
+
+        <div>
+
+            <p>
+                © 2026 — Ayrton Senna |
+                Projeto acadêmico de Programação Web.
+            </p>
+
+            <p>
+                Desenvolvido por Marcos Vinicius Sampaio de Sousa.
+            </p>
+
+        </div>
+
+        <div class="frase-final">
+            “Sonhe, acredite, conquiste.”
+        </div>
+
+    </footer>
+
+
+    <!-- Liga o JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1325 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--preto);
+
+    color: var(--branco);
+
+    line-height: 1.5;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+    --preto: #05080c;
+    --preto-2: #0a0f15;
+    --card: #0c1219;
+    --borda: #263442;
+    --cinza: #b8c0c9;
+    --branco: #f5f7fa;
+    --amarelo: #ffd400;
+    --amarelo-2: #ffdf22;
+}
+
+
+/* =========================================================
+   LINKS E IMAGENS
+========================================================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    min-height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    padding: 0 3.5%;
+
+    background: rgba(5, 8, 12, 0.95);
+
+    border-bottom: 1px solid var(--borda);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* Logo */
+
+.marca {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.simbolo {
+    display: flex;
+    place-items: center;
+
+    width: 50px;
+    height: 42px;
+
+    color: var(--amarelo);
+
+    font-size: 38px;
+    font-weight: 900;
+    font-style: italic;
+
+    transform: skew(-15deg);
+}
+
+.marca-texto {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.marca-texto strong {
+    font-size: 18px;
+
+    letter-spacing: 3px;
+}
+
+.marca-texto small {
+    margin-top: 7px;
+
+    color: #aeb4ba;
+
+    font-size: 7px;
+
+    letter-spacing: 6px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+
+    gap: 36px;
+}
+
+.menu a {
+    position: relative;
+
+    padding: 22px 0 18px;
+
+    color: #dbe0e5;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: 0.25s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: var(--amarelo);
+}
+
+.menu a.ativo::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 3px;
+
+    background: var(--amarelo);
+}
+
+
+/* =========================================================
+   BOTÃO DE TEMA
+========================================================= */
+
+.btn-tema {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    color: #dce2e8;
+
+    background: transparent;
+
+    border: 1px solid #687583;
+
+    border-radius: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 450px;
+
+    display: grid;
+
+    grid-template-columns: 39% 61%;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--borda);
+
+    background:
+        radial-gradient(
+            circle at 65% 45%,
+            rgba(255, 212, 0, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            90deg,
+            #060a0e 0%,
+            #091016 38%,
+            #05080b 100%
+        );
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 80px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.6)
+        );
+
+    pointer-events: none;
+}
+
+
+/* Conteúdo */
+
+.hero-conteudo {
+    position: relative;
+
+    z-index: 3;
+
+    padding: 55px 10% 55px 13%;
+}
+
+
+/* Chamada */
+
+.chamada {
+    margin-bottom: 10px;
+
+    color: var(--amarelo);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+
+/* Título */
+
+.hero h1 {
+    margin-bottom: 13px;
+
+    font-size: clamp(36px, 4vw, 61px);
+
+    font-weight: 900;
+
+    line-height: 0.94;
+
+    letter-spacing: -2px;
+
+    font-style: italic;
+}
+
+.hero h1 span {
+    color: var(--amarelo);
+}
+
+
+/* Descrição */
+
+.hero-descricao {
+    max-width: 390px;
+
+    margin-bottom: 22px;
+
+    color: #d5dbe0;
+
+    font-size: 14px;
+}
+
+
+/* Botão amarelo */
+
+.btn-amarelo {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    min-width: 235px;
+
+    padding: 12px 18px;
+
+    color: #080b0f;
+
+    background: var(--amarelo);
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    transition: 0.25s;
+}
+
+.btn-amarelo:hover {
+    background: var(--amarelo-2);
+
+    transform: translateY(-2px);
+}
+
+
+/* Foto principal */
+
+.hero-foto {
+    position: relative;
+
+    align-self: stretch;
+
+    min-height: 450px;
+
+    overflow: hidden;
+}
+
+.hero-foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter: saturate(1.05) contrast(1.03);
+}
+
+.hero-foto::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 1;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #060a0e 0%,
+            rgba(6, 10, 14, 0.18) 20%,
+            transparent 55%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.2),
+            transparent 55%
+        );
+}
+
+
+/* Assinatura */
+
+.assinatura {
+    position: absolute;
+
+    z-index: 3;
+
+    right: 6%;
+    top: 43%;
+
+    color: white;
+
+    font-family: "Brush Script MT", cursive;
+
+    font-size: 38px;
+
+    font-style: italic;
+
+    transform: rotate(-8deg);
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   CARDS DE INTERAÇÃO
+========================================================= */
+
+.interacoes {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    padding: 16px 7%;
+
+    background: #070c11;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.interacao-card {
+    position: relative;
+
+    display: flex;
+
+    gap: 18px;
+
+    min-height: 188px;
+
+    padding: 17px;
+
+    overflow: hidden;
+
+    border: 1px solid #354351;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.02),
+            transparent
+        ),
+        #0a1017;
+}
+
+
+/* Ícone */
+
+.icone-circulo {
+    flex: 0 0 48px;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--amarelo);
+
+    border: 2px solid var(--amarelo);
+
+    border-radius: 50%;
+
+    font-size: 28px;
+}
+
+
+/* Conteúdo */
+
+.interacao-conteudo {
+    position: relative;
+
+    z-index: 2;
+}
+
+.interacao-card h2 {
+    font-size: 21px;
+
+    font-style: italic;
+}
+
+.interacao-card p {
+    max-width: 400px;
+
+    margin-bottom: 10px;
+
+    color: #d1d7dd;
+
+    font-size: 13px;
+}
+
+.interacao-card label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+/* Campo */
+
+#nome {
+    width: min(410px, 100%);
+
+    padding: 10px 14px;
+
+    color: white;
+
+    background: #141c26;
+
+    border: 1px solid #465563;
+
+    border-radius: 6px;
+
+    outline: none;
+}
+
+#nome:focus {
+    border-color: var(--amarelo);
+
+    box-shadow:
+        0 0 0 2px rgba(255, 212, 0, 0.1);
+}
+
+
+/* Mensagem */
+
+.mensagem-nome {
+    margin-top: 10px;
+
+    color: var(--amarelo) !important;
+
+    font-weight: 800;
+}
+
+
+/* Botão curtir */
+
+.btn-curtir {
+    padding: 11px 28px;
+
+    color: #080b0e;
+
+    background: var(--amarelo);
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-curtir:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Contador */
+
+.contador {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 8px;
+
+    margin-top: 5px;
+}
+
+.contador strong {
+    color: var(--amarelo);
+
+    font-size: 31px;
+}
+
+.contador span {
+    color: white;
+
+    font-weight: 900;
+}
+
+
+/* Elemento decorativo */
+
+.carro-decorativo {
+    position: absolute;
+
+    right: 6%;
+    bottom: -12px;
+
+    color: #273440;
+
+    font-size: 105px;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   HISTÓRIA
+========================================================= */
+
+.historia {
+    display: grid;
+
+    /* Texto + imagem */
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(320px, 0.75fr);
+
+    gap: 35px;
+
+    align-items: center;
+
+    padding: 35px 7%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #070c11 0%,
+            #080d13 58%,
+            rgba(8, 13, 19, 0.35)
+        ),
+        #070c11;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.historia h2 {
+    margin-bottom: 12px;
+
+    font-size: 28px;
+
+    line-height: 1.1;
+
+    font-style: italic;
+}
+
+.historia-texto {
+    align-self: start;
+}
+
+.historia-texto > p:not(.chamada) {
+    margin-bottom: 12px;
+
+    color: #d0d6dc;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+
+/* Imagem da História */
+
+.historia-imagem {
+    width: 100%;
+
+    height: 350px;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    align-self: center;
+}
+
+.historia-imagem img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center 30%;
+
+    filter: saturate(0.95) contrast(1.03);
+}
+
+
+/* =========================================================
+   BOTÃO OUTLINE
+========================================================= */
+
+.btn-outline {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    padding: 8px 15px;
+
+    color: var(--amarelo);
+
+    background: transparent;
+
+    border: 1px solid var(--amarelo);
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.btn-outline:hover {
+    background: var(--amarelo);
+
+    color: #080b0e;
+}
+
+.btn-outline span:last-child {
+    min-width: 10px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DA HISTÓRIA
+========================================================= */
+
+.mais-informacoes {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 12px;
+}
+
+.mais-informacoes.visivel {
+    display: block;
+}
+
+.mais-informacoes p {
+    margin-bottom: 0;
+
+    color: #d0d6dc;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   CONQUISTAS
+========================================================= */
+
+.conquistas {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 35px 7%;
+
+    background:
+        linear-gradient(
+            rgba(5, 8, 12, 0.45),
+            rgba(3, 5, 8, 0.60)
+        ),
+        url("img/senna-titulos.jpg") center/cover;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.conquistas h2 {
+    font-size: 28px;
+
+    font-style: italic;
+}
+
+.linha-amarela {
+    width: 42px;
+
+    height: 3px;
+
+    margin-top: 10px;
+
+    background: var(--amarelo);
+}
+
+.conquistas-titulo {
+    align-self: start;
+}
+
+.conquistas-intro {
+    max-width: 900px;
+
+    margin-top: 12px;
+
+    color: #d0d6dc;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+
+/* Botão */
+
+.btn-conquistas {
+    margin-top: 15px;
+}
+
+
+/* Texto das conquistas */
+
+.texto-conquistas {
+    display: none;
+
+    max-width: 900px;
+
+    margin-top: 15px;
+}
+
+.texto-conquistas.visivel {
+    display: block;
+}
+
+.conquista-item {
+    margin-bottom: 25px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #2c3945;
+}
+
+.conquista-item:last-child {
+    margin-bottom: 0;
+
+    border-bottom: none;
+}
+
+.conquista-item h3 {
+    margin-bottom: 8px;
+
+    color: var(--amarelo);
+
+    font-size: 22px;
+
+    font-style: italic;
+}
+
+.conquista-item p {
+    color: #d0d6dc;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   NÚMEROS
+========================================================= */
+
+.numeros {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.numero-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 82px;
+
+    padding: 10px 15px;
+
+    border: 1px solid #364452;
+
+    border-radius: 8px;
+
+    background: rgba(5, 10, 15, 0.9);
+}
+
+.numero-icone {
+    color: var(--amarelo);
+
+    font-size: 25px;
+}
+
+.numero-card strong {
+    color: var(--amarelo);
+
+    font-size: 25px;
+
+    line-height: 1;
+}
+
+.numero-card p {
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.numero-card small {
+    display: block;
+
+    color: #9fa8b0;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.rodape {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 7%;
+
+    color: #8e99a3;
+
+    background: #060a0e;
+
+    font-size: 9px;
+
+    text-align: center;
+}
+
+.frase-final {
+    color: #c9cdd1;
+
+    font-family: "Brush Script MT", cursive;
+
+    font-size: 17px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   MODO CLARO
+========================================================= */
+
+body.modo-claro {
+    --preto: #f4f6f8;
+    --preto-2: #ffffff;
+    --card: #ffffff;
+    --branco: #17202a;
+    --cinza: #4c555d;
+    --borda: #d2d8de;
+
+    background: #f4f6f8;
+
+    color: #17202a;
+}
+
+
+/* Cabeçalho */
+
+body.modo-claro .cabecalho {
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom-color: #d5dbe0;
+}
+
+body.modo-claro .marca-texto strong {
+    color: #111820;
+}
+
+body.modo-claro .marca-texto small {
+    color: #69737d;
+}
+
+body.modo-claro .menu a {
+    color: #26313b;
+}
+
+body.modo-claro .menu a:hover,
+body.modo-claro .menu a.ativo {
+    color: #b18e00;
+}
+
+body.modo-claro .btn-tema {
+    color: #202a33;
+
+    border-color: #aab4bd;
+
+    background: #ffffff;
+}
+
+
+/* Hero */
+
+body.modo-claro .hero {
+    background: #eef1f4;
+
+    border-bottom-color: #d2d8de;
+}
+
+body.modo-claro .hero::after {
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.08)
+        );
+}
+
+body.modo-claro .hero-foto::before {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(244, 246, 248, 0.9) 0%,
+            rgba(244, 246, 248, 0.12) 24%,
+            transparent 55%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.08),
+            transparent 55%
+        );
+}
+
+body.modo-claro .hero-descricao {
+    color: #3f4b56;
+}
+
+
+/* Interações */
+
+body.modo-claro .interacoes {
+    background: #e9edf1;
+
+    border-bottom-color: #d2d8de;
+}
+
+body.modo-claro .interacao-card {
+    background: #ffffff;
+
+    border-color: #cbd3da;
+
+    box-shadow:
+        0 5px 18px rgba(20, 30, 40, 0.06);
+}
+
+body.modo-claro .interacao-card p {
+    color: #48545f;
+}
+
+body.modo-claro #nome {
+    color: #17202a;
+
+    background: #f8fafb;
+
+    border-color: #b8c2cb;
+}
+
+body.modo-claro #nome::placeholder {
+    color: #7a858e;
+}
+
+body.modo-claro .contador span {
+    color: #17202a;
+}
+
+body.modo-claro .carro-decorativo {
+    color: #dbe1e6;
+}
+
+
+/* História */
+
+body.modo-claro .historia {
+    background: #f4f6f8;
+
+    border-bottom-color: #d2d8de;
+}
+
+body.modo-claro .historia-texto > p:not(.chamada),
+body.modo-claro .mais-informacoes p {
+    color: #3f4b56;
+}
+
+
+/* Conquistas */
+
+body.modo-claro .conquistas {
+    background:
+        linear-gradient(
+            rgba(244, 246, 248, 0.70),
+            rgba(244, 246, 248, 0.78)
+        ),
+        url("img/senna-titulos.jpg") center/cover;
+
+    border-bottom-color: #d2d8de;
+}
+
+body.modo-claro .conquistas-intro,
+body.modo-claro .texto-conquistas p {
+    color: #3f4b56;
+}
+
+body.modo-claro .conquista-item {
+    border-bottom-color: #d2d8de;
+}
+
+body.modo-claro .numero-card {
+    background: rgba(255, 255, 255, 0.94);
+
+    border-color: #cbd3da;
+
+    box-shadow:
+        0 5px 18px rgba(20, 30, 40, 0.05);
+}
+
+body.modo-claro .numero-card small {
+    color: #66727c;
+}
+
+
+/* Rodapé */
+
+body.modo-claro .rodape {
+    color: #59656f;
+
+    background: #e9edf1;
+
+    border-top: 1px solid #d2d8de;
+}
+
+body.modo-claro .frase-final {
+    color: #39444e;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .menu {
+        gap: 18px;
+    }
+
+    .hero {
+        grid-template-columns: 45% 55%;
+    }
+
+    .historia {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(280px, 0.8fr);
+    }
+
+    .historia-imagem {
+        display: block;
+
+        height: 300px;
+    }
+
+    .conquistas-intro,
+    .texto-conquistas {
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .cabecalho {
+        padding: 10px 5%;
+
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 16px;
+
+        overflow-x: auto;
+    }
+
+    .menu a {
+        padding: 5px 0 10px;
+
+        white-space: nowrap;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-conteudo {
+        padding: 55px 8% 25px;
+    }
+
+    .hero-foto {
+        min-height: 330px;
+    }
+
+    .interacoes,
+    .historia {
+        grid-template-columns: 1fr;
+    }
+
+    .historia {
+        padding: 30px 7%;
+    }
+
+    .historia-imagem {
+        display: block;
+
+        height: 280px;
+    }
+
+    .numeros {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .marca-texto strong {
+        font-size: 14px;
+    }
+
+    .marca-texto small {
+        letter-spacing: 4px;
+    }
+
+    .btn-tema span {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .assinatura {
+        font-size: 25px;
+    }
+
+    .historia-imagem {
+        height: 240px;
+    }
+}
