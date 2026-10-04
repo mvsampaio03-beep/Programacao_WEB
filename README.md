@@ -24,15 +24,26 @@ Programacao_WEB/
 │   ├── index.html
 │   └── style.css
 │
-├── atividade_4/
+├── landing_page/
 │   ├── index.html
 │   ├── style.css
-│   ├── script.js
 │   └── img/
 │       ├── ayrton-senna.jpg
 │       ├── senna-titulos.jpg
 │       └── senna.jpg
 │
+├── atividade_4/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
 ├── index.html
 │
 └── README.md
+```
+
+## 👨‍💻 Autor
+
+**Marcos Vinicius Sampaio de Sousa**
+
+**Disciplina:** Programação Web
