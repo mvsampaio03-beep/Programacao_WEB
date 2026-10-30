@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos - API & Favoritos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icone">🛍️</span>
+                <div class="logo-texto">
+                    <h1>TechStore</h1>
+                    <span class="subtitulo-logo">Catálogo Online com API DummyJSON</span>
+                </div>
+            </div>
+
+            <nav class="nav-acoes">
+                <a href="/index.html" class="btn btn-secundario" title="Voltar para a página inicial de atividades">
+                    ⬅️ Voltar ao Início
+                </a>
+
+                <button id="btnVerTodos" class="btn btn-aba ativo" type="button">
+                    📦 Todos os Produtos
+                </button>
+
+                <button id="btnVerFavoritos" class="btn btn-aba btn-favoritos-nav" type="button">
+                    ❤️ Favoritos <span id="contadorFavoritos" class="badge">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNER HERO -->
+    <section class="hero">
+        <div class="container hero-conteudo">
+            <h2>Explore Produtos Incríveis em Tempo Real</h2>
+            <p>Aplicação interativa desenvolvida com HTML5, CSS3, JavaScript Vanilla, consumo de Fetch API pública e persistência em LocalStorage.</p>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container principal">
+
+        <!-- PAINEL DE CONTROLES: BUSCA E FILTROS -->
+        <section class="card painel-controles" aria-label="Filtros e Pesquisa de Produtos">
+            <!-- Formulário de Pesquisa -->
+            <form id="formBusca" class="form-busca">
+                <div class="campo-busca">
+                    <span class="icone-busca">🔍</span>
+                    <input 
+                        type="text" 
+                        id="inputBusca" 
+                        placeholder="Pesquisar por nome, marca ou categoria (ex: phone, laptop)..."
+                        autocomplete="off"
+                    >
+                    <button type="button" id="btnLimparBusca" class="btn-limpar-busca" title="Limpar pesquisa" style="display: none;">
+                        ✕
+                    </button>
+                </div>
+                <button type="submit" class="btn btn-primario">
+                    Buscar
+                </button>
+            </form>
+
+            <!-- Linha de Filtros Secundários -->
+            <div class="filtros-linha">
+                <!-- Filtro por Categoria -->
+                <div class="filtro-grupo">
+                    <label for="selectCategoria">Categoria:</label>
+                    <select id="selectCategoria">
+                        <option value="todas">Todas as categorias</option>
+                    </select>
+                </div>
+
+                <!-- Ordenação -->
+                <div class="filtro-grupo">
+                    <label for="selectOrdenacao">Ordenar por:</label>
+                    <select id="selectOrdenacao">
+                        <option value="padrao">Padrão da API</option>
+                        <option value="preco-crescente">Menor Preço</option>
+                        <option value="preco-decrescente">Maior Preço</option>
+                        <option value="avaliacao">Melhor Avaliação ⭐</option>
+                        <option value="nome-az">Nome (A - Z)</option>
+                    </select>
+                </div>
+
+                <!-- Botão de Reset -->
+                <button type="button" id="btnResetarFiltros" class="btn btn-texto" title="Resetar todos os filtros">
+                    🔄 Resetar filtros
+                </button>
+            </div>
+        </section>
+
+        <!-- BARRA DE STATUS / INFORMAÇÕES -->
+        <section class="barra-status">
+            <h2 id="tituloSecao" class="titulo-secao">Todos os Produtos</h2>
+            <span id="contadorResultados" class="contador-resultados">Carregando catálogo...</span>
+        </section>
+
+        <!-- ÁREA DE CARREGAMENTO (SPINNER) -->
+        <div id="areaCarregando" class="estado-feedback" style="display: none;">
+            <div class="spinner"></div>
+            <p>Consultando API e carregando produtos...</p>
+        </div>
+
+        <!-- ÁREA DE ERRO -->
+        <div id="areaErro" class="estado-feedback feedback-erro" style="display: none;">
+            <span class="icone-feedback">⚠️</span>
+            <h3>Não foi possível carregar os produtos</h3>
+            <p id="mensagemErro">Houve um erro na comunicação com a API. Verifique sua conexão com a internet.</p>
+            <button id="btnTentarNovamente" class="btn btn-primario" type="button">Tentar novamente</button>
+        </div>
+
+        <!-- ÁREA DE RESULTADOS VAZIOS -->
+        <div id="areaVazio" class="estado-feedback feedback-vazio" style="display: none;">
+            <span class="icone-feedback" id="iconeVazio">🔍</span>
+            <h3 id="tituloVazio">Nenhum produto encontrado</h3>
+            <p id="mensagemVazio">Não encontramos nenhum resultado correspondente aos filtros selecionados.</p>
+            <button id="btnAcaoVazio" class="btn btn-secundario" type="button">Limpar filtros e ver todos</button>
+        </div>
+
+        <!-- GRID DE EXIBIÇÃO DE PRODUTOS -->
+        <section id="gridProdutos" class="grid-produtos" aria-live="polite">
+            <!-- Os cards de produtos serão renderizados dinamicamente pelo JavaScript -->
+        </section>
+
+    </main>
+
+    <!-- MODAL DE DETALHES DO PRODUTO -->
+    <div id="modalDetalhes" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <button type="button" id="btnFecharModal" class="btn-fechar-modal" title="Fechar modal (Esc)">
+                ✕
+            </button>
+
+            <div class="modal-corpo">
+                <!-- Coluna de Imagem / Galeria -->
+                <div class="modal-midia">
+                    <div class="modal-imagem-destaque">
+                        <img id="modalImagemPrincipal" src="" alt="Imagem do Produto">
+                    </div>
+                    <div id="modalMiniaturas" class="modal-miniaturas">
+                        <!-- Miniaturas geradas dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Coluna de Informações -->
+                <div class="modal-info">
+                    <div class="modal-cabecalho-info">
+                        <span id="modalCategoria" class="badge-categoria">Categoria</span>
+                        <span id="modalMarca" class="badge-marca">Marca</span>
+                    </div>
+
+                    <h2 id="modalTitulo" class="modal-titulo">Nome do Produto</h2>
+
+                    <div class="modal-avaliacao">
+                        <span id="modalEstrelas" class="estrelas">⭐⭐⭐⭐⭐</span>
+                        <span id="modalNota" class="nota-texto">4.5</span>
+                        <span id="modalEstoque" class="badge-estoque">Em estoque</span>
+                    </div>
+
+                    <p id="modalDescricao" class="modal-descricao">
+                        Descrição completa do produto selecionado.
+                    </p>
+
+                    <div class="modal-precos">
+                        <div class="preco-wrapper">
+                            <span class="label-preco">Preço promocional:</span>
+                            <div class="precos-linha">
+                                <span id="modalPrecoFinal" class="preco-destaque">R$ 0,00</span>
+                                <span id="modalPrecoOriginal" class="preco-original">R$ 0,00</span>
+                                <span id="modalDesconto" class="badge-desconto">-0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-acoes">
+                        <button type="button" id="btnModalFavorito" class="btn btn-favorito-modal">
+                            <span class="icone-coracao">🤍</span>
+                            <span class="texto-btn-favorito">Adicionar aos Favoritos</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST / NOTIFICAÇÃO FLUTUANTE -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>Desenvolvido por <strong>Marcos Vinicius Sampaio de Sousa</strong></p>
+            <p>Disciplina de <strong>Programação Web</strong> &bull; Manipulação de DOM, Eventos, JSON, LocalStorage e Fetch API</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DA APLICAÇÃO -->
+    <script src="script.js"></script>
+</body>
+</html>
+
