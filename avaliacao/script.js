@@ -22,9 +22,9 @@ const API_BASE_URL = "https://dummyjson.com";
 const CHAVE_LOCAL_STORAGE = "techstore_produtos_favoritos";
 
 // Estado global da aplicação
-let produtosAtuais = [];       // Lista de produtos atualmente carregados
-let listaFavoritos = [];       // Lista de produtos favoritados (armazenados em localStorage)
-let produtoSelecionado = null; // Produto aberto no momento no modal
+let produtosAtuais = [];          // Lista de produtos atualmente carregados
+let listaFavoritos = [];          // Lista de produtos favoritados (armazenados em localStorage)
+let produtoSelecionado = null;    // Produto aberto no momento no modal
 let visualizandoFavoritos = false; // Flag para indicar se a aba ativa é a de favoritos
 
 // Fallback de dados locais (usado caso a máquina esteja sem conexão à internet)
@@ -114,6 +114,8 @@ const PRODUTOS_OFFLINE = [
 // ====================================================================
 
 // Navegação e cabeçalho
+const btnVoltarInicio = document.getElementById("btnVoltarInicio");
+const logoCatalogo = document.getElementById("logoCatalogo");
 const btnVerTodos = document.getElementById("btnVerTodos");
 const btnVerFavoritos = document.getElementById("btnVerFavoritos");
 const contadorFavoritos = document.getElementById("contadorFavoritos");
@@ -343,7 +345,7 @@ function formatarMoeda(valor) {
     return new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL"
-    }).format(valor * 5.5); // Multiplicado por 5.5 para simular valor em Reais a partir do USD
+    }).format(valor * 5.5); // Simulação de conversão para visualização em Reais
 }
 
 /**
@@ -671,8 +673,44 @@ function ocultarMensagensFeedback() {
 
 
 // ====================================================================
-// 8. CONTROLE DE ABAS (TODOS VS FAVORITOS)
+// 8. CONTROLE DE NAVEGAÇÃO E INÍCIO DO CATÁLOGO
 // ====================================================================
+
+/**
+ * Retorna à página inicial do catálogo:
+ * Reseta o campo de busca, os filtros de categoria e ordenação,
+ * fecha modais que estejam abertos, restaura a exibição de todos os produtos
+ * e recarrega a listagem original com rolagem suave para o topo.
+ */
+function voltarAoInicioCatalogo() {
+    // 1. Fecha o modal de detalhes caso esteja aberto
+    if (modalDetalhes.classList.contains("aberto")) {
+        fecharModalDetalhes();
+    }
+
+    // 2. Limpa o input de busca e esconde o botão de limpar
+    inputBusca.value = "";
+    btnLimparBusca.style.display = "none";
+
+    // 3. Reseta os selects de categoria e ordenação
+    selectCategoria.value = "todas";
+    selectOrdenacao.value = "padrao";
+
+    // 4. Garante que a aba ativa seja a de todos os produtos
+    visualizandoFavoritos = false;
+    btnVerTodos.classList.add("ativo");
+    btnVerFavoritos.classList.remove("ativo");
+    tituloSecao.textContent = "Todos os Produtos";
+
+    // 5. Recarrega os produtos iniciais da API
+    buscarProdutosAPI();
+
+    // 6. Rola suavemente para o topo da página do catálogo
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // 7. Notifica o usuário
+    exibirToast("Página inicial do catálogo 🛍️");
+}
 
 /**
  * Alterna para a visualização de todos os produtos do catálogo
@@ -707,6 +745,21 @@ function exibirAbaFavoritos() {
 // ====================================================================
 // 9. EVENTOS E INICIALIZAÇÃO DA APLICAÇÃO
 // ====================================================================
+
+// Botão de Voltar ao Início do Catálogo
+if (btnVoltarInicio) {
+    btnVoltarInicio.addEventListener("click", function(evento) {
+        evento.preventDefault();
+        voltarAoInicioCatalogo();
+    });
+}
+
+// Clique na Logo do Catálogo para também voltar ao início
+if (logoCatalogo) {
+    logoCatalogo.addEventListener("click", function() {
+        voltarAoInicioCatalogo();
+    });
+}
 
 // Envio do formulário de pesquisa
 formBusca.addEventListener("submit", function(evento) {
@@ -821,4 +874,3 @@ document.addEventListener("DOMContentLoaded", function() {
     // 3. Busca a lista inicial de produtos da API DummyJSON
     buscarProdutosAPI();
 });
-

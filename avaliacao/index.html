@@ -11,7 +11,7 @@
     <!-- CABEÇALHO / NAVBAR -->
     <header class="header">
         <div class="container header-container">
-            <div class="logo">
+            <div class="logo" id="logoCatalogo" style="cursor: pointer;" title="Ir para a página inicial do catálogo">
                 <span class="logo-icone">🛍️</span>
                 <div class="logo-texto">
                     <h1>TechStore</h1>
@@ -20,15 +20,16 @@
             </div>
 
             <nav class="nav-acoes">
-                <a href="/index.html" class="btn btn-secundario" title="Voltar para a página inicial de atividades">
-                    ⬅️ Voltar ao Início
-                </a>
+                <!-- Botão Voltar ao Início do Catálogo -->
+                <button id="btnVoltarInicio" class="btn btn-secundario" type="button" title="Voltar para a página inicial do catálogo">
+                    🏠 Voltar ao Início
+                </button>
 
-                <button id="btnVerTodos" class="btn btn-aba ativo" type="button">
+                <button id="btnVerTodos" class="btn btn-aba ativo" type="button" title="Ver catálogo completo de produtos">
                     📦 Todos os Produtos
                 </button>
 
-                <button id="btnVerFavoritos" class="btn btn-aba btn-favoritos-nav" type="button">
+                <button id="btnVerFavoritos" class="btn btn-aba btn-favoritos-nav" type="button" title="Ver meus produtos favoritos">
                     ❤️ Favoritos <span id="contadorFavoritos" class="badge">0</span>
                 </button>
             </nav>
@@ -198,7 +199,10 @@
     <footer class="footer">
         <div class="container footer-container">
             <p>Desenvolvido por <strong>Marcos Vinicius Sampaio de Sousa</strong></p>
-            <p>Disciplina de <strong>Programação Web</strong> &bull; Manipulação de DOM, Eventos, JSON, LocalStorage e Fetch API</p>
+            <p>
+                Disciplina de <strong>Programação Web</strong> &bull; 
+                <a href="../index.html" class="link-rodape" title="Acessar o portal de atividades da disciplina">Portal de Atividades</a>
+            </p>
         </div>
     </footer>
 
@@ -206,4 +210,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
